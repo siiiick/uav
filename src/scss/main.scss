@@ -1,0 +1,42 @@
+@import 'reset';
+@import 'vars';
+
+body { background-color: #000; color: $white; font-family: $font; }
+
+#ver { bottom: 10px; left: 10px; }
+
+#cursor {
+	height: 200px;
+	width: 300px;
+	// border: 1px solid $white;
+}
+
+#cursor-container {
+	.cursor-point {
+		background-color: $white;
+	}
+
+	.top { top: 0; }
+	.top, .bottom { left: 50%; transform: translateX(-50%);}
+	.bottom { bottom: 0; }
+	
+	.left { left: 0; }
+	.left, .right { top: 50%; transform: translateY(-50%);}
+	.right { right: 0; }
+
+	$pointWidth: 40px;
+
+	.wide { width: $pointWidth; height: 1px;}
+	.wide-small { width: $pointWidth ; height: 1px;}
+	.tall { height: $pointWidth; width: 1px;}
+	.tall-small { height: $pointWidth; width: 1px;}
+
+	.wide-small, .tall-small { animation: 1s infinite off; }
+}
+
+@keyframes off {
+	0% { opacity: 0; }
+	50% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
